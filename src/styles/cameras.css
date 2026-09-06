@@ -1,0 +1,206 @@
+/*
+  Cameras page: Leaflet chrome retinted onto the site's tokens. Loaded only
+  with this route's chunk, after leaflet.css, so these rules win on ties.
+*/
+
+.map {
+  position: relative;
+  /* Own stacking context: Leaflet panes sit at z-index 400+ and would
+     otherwise paint over the sticky nav. */
+  z-index: 0;
+  height: clamp(400px, 60vh, 620px);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  /* Also the offline fallback: markers read against a muted plane. */
+  background: var(--surface-sunk);
+}
+
+.leaflet-container {
+  background: var(--surface-sunk);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+}
+
+.leaflet-container a {
+  color: var(--brand);
+}
+
+/* Dim the raster basemap in dark mode so the markers stay the brightest mark. */
+:root[data-theme='dark'] .leaflet-tile-pane {
+  filter: brightness(0.62) saturate(0.72) contrast(1.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .leaflet-tile-pane {
+    filter: brightness(0.62) saturate(0.72) contrast(1.08);
+  }
+}
+
+/* Controls */
+
+.leaflet-bar {
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.leaflet-bar a,
+.leaflet-bar a:hover {
+  background: var(--surface);
+  color: var(--ink-2);
+  border-bottom-color: var(--rule);
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.leaflet-bar a:hover {
+  background: var(--surface-sunk);
+  color: var(--ink);
+}
+
+.leaflet-bar a.leaflet-disabled {
+  background: var(--surface-sunk);
+  color: var(--ink-3);
+}
+
+.leaflet-control-attribution {
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+  padding: 0.1rem 0.45rem;
+}
+
+.leaflet-control-attribution a {
+  color: var(--ink-2);
+}
+
+/* City bounds label */
+
+.map__bbox-label {
+  background: var(--surface);
+  color: var(--ink-2);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  box-shadow: none;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.35rem;
+  white-space: nowrap;
+}
+
+.map__bbox-label::before {
+  display: none;
+}
+
+/* Popups */
+
+.leaflet-popup-content-wrapper {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 16%);
+}
+
+.leaflet-popup-content {
+  margin: 0.7rem 0.85rem;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.cam-pop {
+  min-width: 14rem;
+}
+
+.leaflet-popup-tip {
+  background: var(--surface);
+  border-right: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+  box-shadow: none;
+}
+
+.leaflet-popup-close-button {
+  color: var(--ink-3);
+}
+
+.leaflet-popup-close-button:hover {
+  color: var(--ink);
+}
+
+.cam-pop__dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.15rem 0.8rem;
+  margin: 0;
+}
+
+.cam-pop__dl dt {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-top: 0.12rem;
+  white-space: nowrap;
+}
+
+.cam-pop__dl dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+.cam-pop__link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+}
+
+.cam-pop__note {
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  color: var(--ink-3);
+}
+
+/* Filters: checkbox controls that line up with the inputs beside them */
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-bottom: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.check input {
+  accent-color: var(--brand);
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  flex: none;
+}
+
+.check:hover {
+  color: var(--ink);
+}
+
+.note--error {
+  color: var(--status-critical-ink);
+}
+
+/* Legend mark for the direction wedge */
+
+.wedge-glyph {
+  flex: none;
+  overflow: visible;
+}

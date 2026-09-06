@@ -1,0 +1,127 @@
+{
+  "purchase_orders": [
+    {
+      "po_number": "0000029968",
+      "pdf": "CSC01_0000029968_0.pdf",
+      "text": "CSC01_0000029968_0.txt",
+      "date": "2024-06-12",
+      "revision": null,
+      "supplier": {"id": "0000011704", "name": "INSIGHT PUBLIC SECTOR", "address": "481 FRANKLIN ST, NAPA CA 94559"},
+      "buyer": "Todd Ninokata",
+      "buyer_phone": "408/615-2049",
+      "payment_terms": "30 Days",
+      "currency": "USD",
+      "ship_to": "City of Santa Clara, Police - Services Division, 601 El Camino Real, Santa Clara CA 95050",
+      "lines": [
+        {"line": "1-1", "description": "Professional Services", "quantity": 13, "uom": "EA", "unit_price": 150.0, "extended_amount": 1950.0, "due_date": "2024-06-22"},
+        {"line": "2-1", "description": "Lic. Plate Recog (24-25)", "quantity": 15, "uom": "EA", "unit_price": 3000.0, "extended_amount": 45000.0, "due_date": "2024-06-22"},
+        {"line": "3-1", "description": "Lic. Plate Recog (25-26", "quantity": 15, "uom": "EA", "unit_price": 3000.0, "extended_amount": 45000.0, "due_date": "2024-06-22"},
+        {"line": "4-1", "description": "Implementation Fee", "quantity": 2, "uom": "EA", "unit_price": 650.0, "extended_amount": 1300.0, "due_date": "2024-06-22"}
+      ],
+      "notes": "PO TERM: 24 MONTHS FIRST INSTALLATION AND VALIDATION OF FLOCK HARDWARE | SPECIFICATIONS AND PRICING PER INSIGHT QUOTATION NUMBER 0227494713, DATED 6/11/2024, ARE HEREBY INCORPORATED BY REFERENCE, HEREIN. CONTRACT RATES PURSUANT TO OMNIA PARTNERS COOPERATIVE CONTRACT #23-6692-03. | PLEASE CONFIRM RECEIPT OF ORDER WITH CAROLYN MCDOWELL (CMCDOWELL@SANTACLARACA.GOV) AND TRICIA FOSTER (TFOSTER@SANTACLARACA.GOV) | NO PREV PO #",
+      "printed_total": 93250.0,
+      "computed_total": 93250.0
+    },
+    {
+      "po_number": "0000030994",
+      "pdf": "CSC01_0000030994_0.pdf",
+      "text": "CSC01_0000030994_0.txt",
+      "date": "2025-02-25",
+      "revision": null,
+      "supplier": {"id": "0000011704", "name": "INSIGHT PUBLIC SECTOR", "address": "481 FRANKLIN ST, NAPA CA 94559"},
+      "buyer": "Todd Ninokata",
+      "buyer_phone": "408/615-2049",
+      "payment_terms": "30 Days",
+      "currency": "USD",
+      "ship_to": "City of Santa Clara, Police - Services Division, 601 El Camino Real, Santa Clara CA 95050",
+      "lines": [
+        {"line": "1-1", "description": "FLCK-FALCON-2-LE: FLOCK GROUP FALCON INFRASTRUCTURE-POWER + LTE), LICENSE PLATE RECOGNITION CAMERA WITH VEHICLE FINGERPRINT + MACHINE LEARNING SOFTWARE AND REAL-ALERTS FOR UNLIMITED USERS", "quantity": 17, "uom": "EA", "unit_price": 3000.0, "extended_amount": 51000.0, "due_date": "2025-03-07"}
+      ],
+      "notes": "PO TERM: 2/24/2025-2/23/2026 | SPECIFICATIONS AND PRICING PER INSIGHT QUOTATION NUMBER 0228160447, DATED 2/6/2025, ARE HEREBY INCORPORATED BY REFERENCE, HEREIN. CONTRACT RATES PURSUANT TO OMNIA PARTNERS COOPERATIVE CONTRACT #23-6692-03. | PLEASE CONFIRM RECEIPT OF ORDER WITH CAROLYN MCDOWELL (CMCDOWELL@SANTACLARACA.GOV) AND TRICIA FOSTER (TFOSTER@SANTACLARACA.GOV) | PREV PO # 29968",
+      "printed_total": 51000.0,
+      "computed_total": 51000.0
+    },
+    {
+      "po_number": "0000030995",
+      "pdf": "CSC01_0000030995_0.pdf",
+      "text": "CSC01_0000030995_0.txt",
+      "date": "2025-02-25",
+      "revision": null,
+      "supplier": {"id": "0000011704", "name": "INSIGHT PUBLIC SECTOR", "address": "481 FRANKLIN ST, NAPA CA 94559"},
+      "buyer": "Todd Ninokata",
+      "buyer_phone": "408/615-2049",
+      "payment_terms": "30 Days",
+      "currency": "USD",
+      "ship_to": "City of Santa Clara, Police - Services Division, 601 El Camino Real, Santa Clara CA 95050",
+      "lines": [
+        {"line": "1-1", "description": "FOS-ENHANLPR-T5: FLOCK ENHANCED LPR - LICENSE - 101-200 OFFICERS", "quantity": 1, "uom": "EA", "unit_price": 15000.0, "extended_amount": 15000.0, "due_date": "2025-03-07"}
+      ],
+      "notes": "PO TERM: 2/24/2025-2/23/2026 | SPECIFICATIONS AND PRICING PER INSIGHT QUOTATION NUMBER 0228209565, DATED 2/24/2025, ARE HEREBY INCORPORATED BY REFERENCE, HEREIN. CONTRACT RATES PURSUANT TO OMNIA PARTNERS COOPERATIVE CONTRACT #23-6692-03. | PLEASE CONFIRM RECEIPT OF ORDER WITH CAROLYN MCDOWELL (CMCDOWELL@SANTACLARACA.GOV) AND TRICIA FOSTER (TFOSTER@SANTACLARACA.GOV) | PREV PO # 29968",
+      "printed_total": 15000.0,
+      "computed_total": 15000.0
+    },
+    {
+      "po_number": "0000031224",
+      "pdf": "CSC01_0000031224_0.pdf",
+      "text": "CSC01_0000031224_0.txt",
+      "date": "2025-04-08",
+      "revision": null,
+      "supplier": {"id": "0000011704", "name": "INSIGHT PUBLIC SECTOR", "address": "481 FRANKLIN ST, NAPA CA 94559"},
+      "buyer": "Todd Ninokata",
+      "buyer_phone": "408/615-2049",
+      "payment_terms": "30 Days",
+      "currency": "USD",
+      "ship_to": "City of Santa Clara, Police - Services Division, 601 El Camino Real, Santa Clara CA 95050",
+      "lines": [
+        {"line": "1-1", "description": "FLOCK IMPLEMENTATION FEE", "quantity": 2, "uom": "EA", "unit_price": 650.0, "extended_amount": 1300.0, "due_date": "2025-04-18"},
+        {"line": "2-1", "description": "FLOCK PROFESSIONAL SERVICES", "quantity": 13, "uom": "EA", "unit_price": 150.0, "extended_amount": 1950.0, "due_date": "2025-04-18"},
+        {"line": "3-1", "description": "LICENSE PLATE RECOGNITION 2025-2026", "quantity": 15, "uom": "EA", "unit_price": 3000.0, "extended_amount": 45000.0, "due_date": "2025-04-18"},
+        {"line": "4-1", "description": "LICENSE PLATE RECOGNITION 2026-2027", "quantity": 15, "uom": "EA", "unit_price": 3000.0, "extended_amount": 45000.0, "due_date": "2025-04-18"}
+      ],
+      "notes": "PO TERM: 24 MONTHS FIRST INSTALLATION AND VALIDATION OF FLOCK HARDWARE | SPECIFICATIONS AND PRICING PER INSIGHT QUOTATION NUMBER 0228313483, DATED 3/27/2025, ARE HEREBY INCORPORATED BY REFERENCE, HEREIN. CONTRACT RATES PURSUANT TO OMNIA PARTNERS COOPERATIVE CONTRACT #23-6692-03. | PLEASE CONFIRM RECEIPT OF ORDER WITH CAROLYN MCDOWELL (CMCDOWELL@SANTACLARACA.GOV) AND TRICIA FOSTER (TFOSTER@SANTACLARACA.GOV) | NO PREV PO #",
+      "printed_total": 93250.0,
+      "computed_total": 93250.0
+    },
+    {
+      "po_number": "0000032084",
+      "pdf": "CSC01_0000032084_0.pdf",
+      "text": "CSC01_0000032084_0.txt",
+      "date": "2025-10-08",
+      "revision": null,
+      "supplier": {"id": "0000011704", "name": "INSIGHT PUBLIC SECTOR", "address": "481 FRANKLIN ST, NAPA CA 94559"},
+      "buyer": "Theresa Porter",
+      "buyer_phone": "408/615-2051",
+      "payment_terms": "30 Days",
+      "currency": "USD",
+      "ship_to": "City of Santa Clara, Police - Services Division, 601 El Camino Real, Santa Clara CA 95050",
+      "lines": [
+        {"line": "1-1", "description": "FLOCK GROUP PROFESSIONAL SERVICES AND INFRASTRUCTURE MOUNTING SERVICES (PS-IMP-EXST)", "quantity": 8, "uom": "EA", "unit_price": 150.0, "extended_amount": 1200.0, "due_date": "2025-10-18"},
+        {"line": "2-1", "description": "FLOCK GROUP FALCON INFRASTRUCTURE (POWER + LTE), LICENSE PLATE RECOGNITION CAMERA WITH VEHICLE FINGERPRINT + MACHINE LEARNING SOFTWARE AND REAL ALERTS FOR UNLIMITED USERS (FLCK-FALCON-2-LE) YEAR 2", "quantity": 8, "uom": "EA", "unit_price": 3000.0, "extended_amount": 24000.0, "due_date": "2025-10-18"},
+        {"line": "3-1", "description": "FLOCK GROUP FALCON INFRASTRUCTURE (POWER + LTE), LICENSE PLATE RECOGNITION CAMERA WITH VEHICLE FINGERPRINT + MACHINE LEARNING SOFTWARE AND REAL ALERTS FOR UNLIMITED USERS (FLCK-FALCON-2-LE) YEAR 1", "quantity": 8, "uom": "EA", "unit_price": 3000.0, "extended_amount": 24000.0, "due_date": "2025-10-18"}
+      ],
+      "notes": "FLOCK LICENSE PLATE RECOGNITION CAMERAS AND SOFTWARE FOR SILICON VALLEY POWER | TERM: 24 MONTHS UPON FIRST INSTALLATION AND VALIDATION OF FLOCK HARDWARE | PRICING AND SPECIFICATIONS PURSUANT TO INSIGHT QUOTE NUMBER 228829978, DATED 9/24/2025, ARE HEREBY INCORPORATED BY REFERENCE, HEREIN. CONTRACT RATES PURSUANT TO OMNIA PARTNERS COOPERATIVE CONTRACT #23-6692-03. | PREVIOUS PO 31224",
+      "printed_total": 49200.0,
+      "computed_total": 49200.0
+    },
+    {
+      "po_number": "0000032570",
+      "pdf": "CSC01_0000032570_0.pdf",
+      "text": "CSC01_0000032570_0.txt",
+      "date": "2026-01-20",
+      "revision": null,
+      "supplier": {"id": "0000011704", "name": "INSIGHT PUBLIC SECTOR", "address": "481 FRANKLIN ST, NAPA CA 94559"},
+      "buyer": "Todd Ninokata",
+      "buyer_phone": "408/615-2049",
+      "payment_terms": "30 Days",
+      "currency": "USD",
+      "ship_to": "City of Santa Clara, Police - Services Division, 601 El Camino Real, Santa Clara CA 95050",
+      "lines": [
+        {"line": "1-1", "description": "FLOCK ENHANCED LPR - LICENSE - 101-200 OFFICERS FOS-ENHANLPR-T5", "quantity": 1, "uom": "LOT", "unit_price": 15000.0, "extended_amount": 15000.0, "due_date": "2026-01-30"},
+        {"line": "2-1", "description": "FLOCK GROUP FALCON INFRASTRUCTURE - POWER + LTE, LICENSE PLATE RECOGNITION WITH CAMERA WITH VEHICLE FINGERPRINT ? + MACHINE LEARNING SOFTWARE AND REAL-ALERTS FOR UNLIMITED USERS FLCK-FALCON-2-LE", "quantity": 17, "uom": "EA", "unit_price": 3000.0, "extended_amount": 51000.0, "due_date": "2026-01-30"}
+      ],
+      "notes": "TERM: 2/24/2026-2/23/2027 | SPECIFICATIONS AND PRICING PER INSIGHT PUBLIC SECTOR QUOTATION NUMBER 0229080484., DATED 1/5/2026, ARE HEREBY INCORPORATED. CONTRACT RATES PURSUANT TO OMNIA PARTNERS COOPERATIVE CONTRACT #23-6692-03. | DEPARTMENT CONTACT: CASEY RETTIG EMAIL: CRETTIG@SANTACLARACA.GOV | DEPARTMENT CONTACT: TRICIA FOSTER EMAIL: TFOSTER@SANTACLARACA.GOV | PREV PO # 30994 / 30995",
+      "printed_total": 66000.0,
+      "computed_total": 66000.0
+    }
+  ]
+}

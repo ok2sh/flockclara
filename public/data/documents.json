@@ -1,0 +1,81 @@
+{
+  "documents": [
+    {
+      "file": "INACTIVE Flock Agreement.pdf",
+      "text": "INACTIVE Flock Agreement.txt",
+      "title": "Flock Group Inc. Services Agreement (Order Form) - City of Santa Clara Police Department ALPR Pilot Program",
+      "type": "agreement",
+      "pages": 29,
+      "date": "2020-12-18",
+      "parties": ["City of Santa Clara", "Flock Group Inc."],
+      "summary": "Original 2020 sole-source services agreement and order form between the City of Santa Clara Police Department and Flock Group Inc. for a 12-camera Automated License Plate Reader (ALPR) pilot program, with a 24-month initial term (December 2020 to December 2022) auto-renewing in 12-month increments, a Year 1 cost of $33,000 (including a one-time $3,000 installation fee and $0 pole fee) and a $30,000/year recurring usage fee thereafter. Includes the single-source procurement justification, standard SaaS terms and conditions, and insurance requirements exhibit, executed via PandaDoc on December 18, 2020; the arrangement was later superseded by purchase orders placed through reseller Insight Public Sector under an OMNIA Partners cooperative contract, which is presumably why this agreement is marked inactive.",
+      "size_bytes": 22173466
+    },
+    {
+      "file": "CSC01_0000029968_0.pdf",
+      "text": "CSC01_0000029968_0.txt",
+      "title": "Purchase Order 0000029968 - Flock Safety LPR Services (Insight Public Sector)",
+      "type": "purchase_order",
+      "pages": 1,
+      "date": "2024-06-12",
+      "parties": ["City of Santa Clara", "Insight Public Sector"],
+      "summary": "Purchase order to Insight Public Sector for Flock Safety license plate reader services for the Santa Clara Police Department, covering professional services, an implementation fee, and two years of LPR licensing (2024-25 and 2025-26) under OMNIA Partners cooperative contract #23-6692-03. Total PO amount is $93,250.",
+      "size_bytes": 51447
+    },
+    {
+      "file": "CSC01_0000030994_0.pdf",
+      "text": "CSC01_0000030994_0.txt",
+      "title": "Purchase Order 0000030994 - Flock Falcon LPR Camera Infrastructure (Insight Public Sector)",
+      "type": "purchase_order",
+      "pages": 1,
+      "date": "2025-02-25",
+      "parties": ["City of Santa Clara", "Insight Public Sector"],
+      "summary": "Purchase order to Insight Public Sector for 17 Flock Falcon LPR camera infrastructure units (FLCK-FALCON-2-LE) for the term 2/24/2025-2/23/2026, referencing prior PO 29968. Total PO amount is $51,000.",
+      "size_bytes": 51417
+    },
+    {
+      "file": "CSC01_0000030995_0.pdf",
+      "text": "CSC01_0000030995_0.txt",
+      "title": "Purchase Order 0000030995 - Flock Enhanced LPR License (Insight Public Sector)",
+      "type": "purchase_order",
+      "pages": 1,
+      "date": "2025-02-25",
+      "parties": ["City of Santa Clara", "Insight Public Sector"],
+      "summary": "Purchase order to Insight Public Sector for a Flock Enhanced LPR license (101-200 officers, FOS-ENHANLPR-T5) for the term 2/24/2025-2/23/2026, referencing prior PO 29968. Total PO amount is $15,000.",
+      "size_bytes": 51293
+    },
+    {
+      "file": "CSC01_0000031224_0.pdf",
+      "text": "CSC01_0000031224_0.txt",
+      "title": "Purchase Order 0000031224 - Flock Safety LPR Services (Insight Public Sector)",
+      "type": "purchase_order",
+      "pages": 1,
+      "date": "2025-04-08",
+      "parties": ["City of Santa Clara", "Insight Public Sector"],
+      "summary": "Purchase order to Insight Public Sector for Flock Safety license plate reader services for the Santa Clara Police Department, covering an implementation fee, professional services, and two years of license plate recognition licensing (2025-26 and 2026-27) under OMNIA Partners cooperative contract #23-6692-03. Total PO amount is $93,250.",
+      "size_bytes": 51486
+    },
+    {
+      "file": "CSC01_0000032084_0.pdf",
+      "text": "CSC01_0000032084_0.txt",
+      "title": "Purchase Order 0000032084 - Flock Falcon LPR Cameras for Silicon Valley Power (Insight Public Sector)",
+      "type": "purchase_order",
+      "pages": 2,
+      "date": "2025-10-08",
+      "parties": ["City of Santa Clara", "Insight Public Sector"],
+      "summary": "Purchase order to Insight Public Sector for Flock Group Falcon LPR cameras plus professional and infrastructure-mounting services deployed for Silicon Valley Power, drawing down against previous PO 31224 and covering Year 1 and Year 2 hardware costs. Total PO amount is $49,200.",
+      "size_bytes": 54454
+    },
+    {
+      "file": "CSC01_0000032570_0.pdf",
+      "text": "CSC01_0000032570_0.txt",
+      "title": "Purchase Order 0000032570 - Flock Enhanced LPR License and Falcon Camera Renewal (Insight Public Sector)",
+      "type": "purchase_order",
+      "pages": 2,
+      "date": "2026-01-20",
+      "parties": ["City of Santa Clara", "Insight Public Sector"],
+      "summary": "Purchase order to Insight Public Sector renewing the Flock Enhanced LPR license and 17 Falcon camera infrastructure units for the term 2/24/2026-2/23/2027, referencing prior POs 30994 and 30995. Total PO amount is $66,000.",
+      "size_bytes": 54366
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Santa Clara PD Flock ALPR Records - CPRA 26-235</title>
+    <meta
+      name="description"
+      content="A public records explorer for Santa Clara (CA) Police Department's Flock Safety automated license plate reader network: 14.9 million outside-agency search events and the city's purchase records, released under CPRA request 26-235."
+    />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <script>
+      // Apply the saved theme before first paint so there is no flash.
+      try {
+        var t = localStorage.getItem('scpd-theme');
+        if (t === 'light' || t === 'dark')
+          document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

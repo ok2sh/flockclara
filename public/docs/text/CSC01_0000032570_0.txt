@@ -1,0 +1,114 @@
+                                                                         Purchase Order
+                                                                                                                                                                  Page: 1
+                                                                                                                                                       Dispatch Via Email
+                                                                                       Purchase Order                    Date                          Revision
+                                                                                       0000032570                        01-20-2026
+                                                                                       Payment Terms                     Freight Terms                 Ship Via
+                                                                                       30 Days                           FOB Prepaid                   Common Carrier
+                                                                                       Buyer                             Phone                         Currency
+                                                                                       Todd Ninokata                     408/615-2049                  USD
+
+ City of Santa Clara                                                                               Ship To: S19C
+ Purchasing - City Hall                                                                            City of Santa Clara
+ 1500 Warburton Ave.                                                                               Police - Services Division
+ Santa Clara CA 95050-3796                                                                         601 El Camino Real
+ United States                                                                                     Santa Clara CA 95050
+                                                                                                   United States
+
+                                                                                                  Attention: Not Specified
+
+       Supplier: 0000011704                                                                       Bill To:
+       INSIGHT PUBLIC SECTOR                                                                      City of Santa Clara
+       481 FRANKLIN ST                                                                            Finance - Accounts Payable
+       NAPA CA 94559                                                                              1500 Warburton Ave.
+       United States                                                                              Santa Clara CA 95050-3796
+                                                                                                  408-615-2369
+
+
+
+ Line-Sch        Item/Description                                         Quantity          UOM               PO Price           Extended Amt              Due Date
+ 1-1             FLOCK ENHANCED LPR - LICENSE -                              1.00            LOT             15,000.00               15,000.00            01/30/2026
+                 101-200 OFFICERS
+                 FOS-ENHANLPR-T5
+
+ 2-1             FLOCK GROUP FALCON                                            17.00           EA              3,000.00                51,000.00          01/30/2026
+                 INFRASTRUCTURE - POWER + LTE,
+                 LICENSE PLATE RECOGNITION WITH
+                 CAMERA WITH VEHICLE
+                 FINGERPRINT ? + MACHINE
+                 LEARNING SOFTWARE AND REAL-
+                 ALERTS FOR UNLIMITED USERS
+                 FLCK-FALCON-2-LE
+
+
+                 TERM: 2/24/2026-2/23/2027
+
+                 SPECIFICATIONS AND PRICING PER INSIGHT PUBLIC SECTOR QUOTATION NUMBER 0229080484., DATED
+                 1/5/2026, ARE HEREBY INCORPORATED. CONTRACT RATES PURSUANT TO OMNIA PARTNERS
+                 COOPERATIVE CONTRACT #23-6692-03.
+
+                 DEPARTMENT CONTACT: CASEY RETTIG
+                 EMAIL: CRETTIG@SANTACLARACA.GOV
+
+                 DEPARTMENT CONTACT: TRICIA FOSTER
+                 EMAIL: TFOSTER@SANTACLARACA.GOV
+
+
+
+                 PREV PO # 30994 / 30995
+
+
+
+
+The complete contract shall consist of this Purchase Order, including the City's Standard Terms and Conditions and any addendum attached thereto, which can be found
+at https://santaclaraca.gov/CSCTermsAndConditions, plus all of the applicable attachments incorporated hereto or by reference herein. In the event of a conflict between the
+terms and conditions of this Purchase Order and the terms and conditions in any other attachment incorporated hereto or by reference herein, the terms and conditions of this
+Purchase Order shall control. Supplier agrees to comply with Executive Order N-6-22 (EO) issued on March 4, 2022 sanctions on materials and services from Russia.
+
+
+                                                                                                   Authorized Signature
+                                                                         Purchase Order
+                                                                                                                                                                  Page: 2
+                                                                                                                                                       Dispatch Via Email
+                                                                                       Purchase Order                    Date                          Revision
+                                                                                       0000032570                        01-20-2026
+                                                                                       Payment Terms                     Freight Terms                 Ship Via
+                                                                                       30 Days                           FOB Prepaid                   Common Carrier
+                                                                                       Buyer                             Phone                         Currency
+                                                                                       Todd Ninokata                     408/615-2049                  USD
+
+ City of Santa Clara                                                                               Ship To: S19C
+ Purchasing - City Hall                                                                            City of Santa Clara
+ 1500 Warburton Ave.                                                                               Police - Services Division
+ Santa Clara CA 95050-3796                                                                         601 El Camino Real
+ United States                                                                                     Santa Clara CA 95050
+                                                                                                   United States
+
+                                                                                                  Attention: Not Specified
+
+       Supplier: 0000011704                                                                       Bill To:
+       INSIGHT PUBLIC SECTOR                                                                      City of Santa Clara
+       481 FRANKLIN ST                                                                            Finance - Accounts Payable
+       NAPA CA 94559                                                                              1500 Warburton Ave.
+       United States                                                                              Santa Clara CA 95050-3796
+                                                                                                  408-615-2369
+
+
+
+  Line-Sch        Item/Description                                         Quantity         UOM                PO Price           Extended Amt              Due Date
+                                                                                           Sub Total                                  66,000.00
+
+
+                                                                                           Total PO Amount                              66,000.00
+
+
+
+
+The complete contract shall consist of this Purchase Order, including the City's Standard Terms and Conditions and any addendum attached thereto, which can be found
+at https://santaclaraca.gov/CSCTermsAndConditions, plus all of the applicable attachments incorporated hereto or by reference herein. In the event of a conflict between the
+terms and conditions of this Purchase Order and the terms and conditions in any other attachment incorporated hereto or by reference herein, the terms and conditions of this
+Purchase Order shall control. Supplier agrees to comply with Executive Order N-6-22 (EO) issued on March 4, 2022 sanctions on materials and services from Russia.
+
+
+                                                                                                   Authorized Signature
+

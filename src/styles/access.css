@@ -1,0 +1,83 @@
+/*
+  Access page: the 351-name access roster and the verbatim policy blocks.
+  Loaded with this route's chunk only.
+*/
+
+/* Six portal figures, read as two rows of three rather than five and one. */
+.access-stats {
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+/* Roster: a directory, so it reads in columns rather than as a long table. */
+.orglist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 0 1.5rem;
+}
+
+.orglist__item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.32rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.875rem;
+  min-width: 0;
+}
+
+.orglist__name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Names with no audit match stay legible but recede from the linked ones. */
+.orglist__name--plain {
+  color: var(--ink-2);
+}
+
+.orglist__n {
+  flex: none;
+  font-size: 0.8rem;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Verbatim policy text, quoted rather than paraphrased. */
+.disclose {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.disclose + .disclose {
+  margin-top: 0.6rem;
+}
+
+.disclose > summary {
+  cursor: pointer;
+  padding: 0.7rem 1.1rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  list-style-position: inside;
+}
+
+.disclose > summary:hover {
+  background: var(--surface-sunk);
+}
+
+.disclose[open] > summary {
+  border-bottom: 1px solid var(--rule);
+}
+
+.disclose__body {
+  padding: 0.9rem 1.1rem 1.05rem;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  max-width: 74ch;
+}
