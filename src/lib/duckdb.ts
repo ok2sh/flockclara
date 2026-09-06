@@ -43,16 +43,21 @@ async function boot(): Promise<duckdb.AsyncDuckDB> {
   await db.open({
     // castBigIntToDouble keeps COUNT(*) and BIGINT columns as plain JS numbers.
     query: { castBigIntToDouble: true },
-    // These two together make DuckDB size each file with a HEAD + "Range: bytes=0-"
-    // probe and then read it with 206 range requests. Leaving full reads allowed
-    // makes DuckDB probe with "GET Range: bytes=0-0" instead, which several static
-    // servers (Vite's dev server among them) answer with the entire file, after
-    // which DuckDB abandons ranges and downloads all 163 MB. The cost is that a
-    // host which cannot serve ranges at all now fails the query outright rather
-    // than quietly pulling every file in full.
+    // How DuckDB learns each file's size before it can range-read it.
+    //
+    // reliableHeadRequests:true would size a file with HEAD + "Range: bytes=0-"
+    // and requires a 206 back. Vite's dev and preview servers answer that with
+    // 206, but GitHub Pages - where this site is published - ignores Range on
+    // HEAD and answers 200, so the probe fails; with full reads also disallowed
+    // there is no fallback and every query dies with "Failed to open file".
+    //
+    // So: size via "GET Range: bytes=0-0" (Pages answers 206) plus a HEAD for
+    // the total length. Reads themselves stay ranged. allowFullHTTPReads is the
+    // fallback that makes this path exist at all; it only turns into a whole-file
+    // download on a host that ignores Range on GET too, which Pages does not.
     filesystem: {
-      reliableHeadRequests: true,
-      allowFullHTTPReads: false,
+      reliableHeadRequests: false,
+      allowFullHTTPReads: true,
       forceFullHTTPReads: false,
     },
   });
