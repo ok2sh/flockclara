@@ -70,8 +70,8 @@ export function Layout() {
             <p>
               Records released by the City of Santa Clara Police Department in
               response to California Public Records Act request 26-235 on{' '}
-              {longDate('2026-08-05')}. Republished here without alteration to the
-              underlying values.
+              {longDate('2026-08-05')}. Republished with exact duplicate rows
+              removed and no value altered.
             </p>
           </div>
           <div>

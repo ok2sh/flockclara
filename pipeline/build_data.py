@@ -8,6 +8,12 @@ Input : *-Network-Audit.csv (one per month) from the raw CPRA release. Those
 Output: public/data/parquet/*.parquet + manifest.json
         public/data/aggregates/*.json
 
+Exact duplicates are removed. The release contains rows that are byte
+identical across all six columns; they are a logging artifact concentrated in
+two windows (Aug 2022-Jan 2023, where Sep-Dec 2022 sit at a clean 2.0x, and
+Feb 2025, where the groups are exactly 5). Collapsing each identical group to a
+single row is the only transformation applied, and both counts are published.
+
 Idempotent: output directories are wiped and recreated on every run.
 """
 
@@ -37,6 +43,9 @@ MAX_BYTES = 95 * 1024 * 1024
 TZ = "America/Los_Angeles"
 
 report = {}
+
+SELECT_COLS = ("org, networks_searched, timeframe_start, timeframe_end, "
+               "search_time, search_type")
 
 
 def log(msg):
@@ -132,11 +141,39 @@ report["null_search_type"] = nulls[4]
 report["unknown_org_rows"] = nulls[5]
 log("null parses: search_time=%d tf_start=%d tf_end=%d networks=%d type=%d unknown_org=%d" % nulls)
 
-parsed = raw_rows - nulls[0]
-report["parsed_rows"] = parsed
+parsed_all = raw_rows - nulls[0]
+report["parsed_rows"] = parsed_all
+
+# ------------------------------------------------------------------- dedupe
+# Collapse rows that are identical across every published column. Search time
+# has one-second resolution, so a genuine collision is possible in principle;
+# it is not what this removes. The duplicates are systemic (a uniform ~2.0x
+# across unrelated agencies for five straight months, and groups of exactly 5
+# in Feb 2025), and deduplicating restores a continuous monthly series.
+log("deduplicating ...")
+con.execute(
+    "CREATE TABLE searches_dedup AS SELECT DISTINCT %s FROM searches" % SELECT_COLS
+)
+con.execute("DROP TABLE searches")
+con.execute("ALTER TABLE searches_dedup RENAME TO searches")
+
+released_rows = raw_rows
+distinct_rows = con.execute("SELECT count(*) FROM searches").fetchone()[0]
+duplicate_rows = released_rows - distinct_rows
+null_time_rows = con.execute(
+    "SELECT count(*) FROM searches WHERE search_time IS NULL"
+).fetchone()[0]
+parsed = distinct_rows - null_time_rows
+report["released_rows"] = released_rows
+report["distinct_rows"] = distinct_rows
+report["duplicate_rows"] = duplicate_rows
+log("released=%d distinct=%d removed=%d (%.2f%%)"
+    % (released_rows, distinct_rows, duplicate_rows,
+       100.0 * duplicate_rows / released_rows))
 
 
 # ------------------------------------------------------------- output folders
+
 
 for d in (PARQ_DIR, AGG_DIR):
     if os.path.isdir(d):
@@ -146,7 +183,6 @@ for d in (PARQ_DIR, AGG_DIR):
 
 # --------------------------------------------------------------- parquet write
 
-SELECT_COLS = "org, networks_searched, timeframe_start, timeframe_end, search_time, search_type"
 # (org, search_time) drives row-group pruning; the rest only break ties so that
 # reruns are byte-identical (many rows share org+search_time).
 ORDER_BY = "org, search_time, search_type, networks_searched, timeframe_start, timeframe_end"
@@ -195,13 +231,13 @@ for y, q, _n in quarters:
 
 report["split_quarters"] = split_quarters
 
-if nulls[0]:
+if null_time_rows:
     p = os.path.join(PARQ_DIR, "searches_unparsed.parquet")
     con.execute(
         "COPY (SELECT %s FROM searches WHERE search_time IS NULL) TO %s "
         "(FORMAT PARQUET, COMPRESSION ZSTD)" % (SELECT_COLS, sql_str(p))
     )
-    log("wrote searches_unparsed.parquet (%d rows)" % nulls[0])
+    log("wrote searches_unparsed.parquet (%d rows)" % null_time_rows)
 
 manifest_files.sort(key=lambda e: e["min"])
 manifest = {
@@ -297,14 +333,6 @@ dump("heatmap.json", {
     "grid": grid,
 })
 
-log("computing duplicates ...")
-distinct_rows = con.execute(
-    "SELECT count(*) FROM (SELECT DISTINCT %s FROM searches WHERE search_time IS NOT NULL)"
-    % SELECT_COLS
-).fetchone()[0]
-duplicate_rows = parsed - distinct_rows
-report["duplicate_rows"] = duplicate_rows
-
 s = con.execute(
     """
     SELECT count(*), count(DISTINCT org), min(search_time), max(search_time),
@@ -319,6 +347,7 @@ per_year = [{"year": y, "searches": n} for y, n in con.execute(
 
 dump("summary.json", {
     "total_searches": s[0],
+    "released_rows": released_rows,
     "distinct_orgs": s[1],
     "first_search": iso(s[2]),
     "last_search": iso(s[3]),
@@ -347,6 +376,17 @@ v["manifest_total_eq_table"] = manifest["total_rows"] == parsed
 monthly = json.load(open(os.path.join(AGG_DIR, "monthly.json")))
 v["monthly_sum_eq_total"] = sum(monthly["searches"]) == s[0]
 v["line_math_eq_raw"] = report["expected_records"] == raw_rows
+v["dedupe_left_no_duplicates"] = con.execute(
+    "SELECT count(*) = count(DISTINCT (%s)) FROM searches" % SELECT_COLS
+).fetchone()[0]
+v["released_minus_removed_eq_published"] = (
+    released_rows - duplicate_rows == distinct_rows)
+# Every published parquet row must be unique across the whole set, not just
+# within its own file.
+v["parquet_globally_unique"] = con.execute(
+    "SELECT count(*) = count(DISTINCT (%s)) FROM read_parquet(%s)"
+    % (SELECT_COLS, sql_str(os.path.join(PARQ_DIR, "searches_*.parquet")))
+).fetchone()[0]
 
 # Spot-check: parse the January 2022 file on its own.
 jan = [f for f in files if os.path.basename(f).startswith("1_1_2022-")]

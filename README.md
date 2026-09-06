@@ -106,8 +106,9 @@ Requires GitHub Pages' HTTP range request support (present) for the explorer.
 Source code is MIT (see `LICENSE`). The published records and third-party data
 under `public/` are not - see `NOTICE` for the per-directory terms.
 
-- Audit records and documents: public records, republished as released
-  (exact-duplicate rows preserved; see the site's About page for caveats).
+- Audit records and documents: public records, republished with exact-duplicate
+  rows removed (813,208 of 14,895,298; a logging fault in Aug 2022-Jan 2023 and
+  Feb 2025, see the site's About page). No other transformation is applied.
 - Camera locations: (c) OpenStreetMap contributors, ODbL 1.0, collected via
   DeFlock (https://deflock.me), extracted from
   https://github.com/FoggedLens/deflockhopper_maps (MIT).

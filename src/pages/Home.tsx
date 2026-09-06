@@ -54,11 +54,12 @@ export function Home() {
             Between January 2022 and February 2026, outside law enforcement
             agencies ran{' '}
             <strong style={{ color: 'var(--ink)', fontWeight: 600 }}>
-              {summary.data ? num(summary.data.total_searches) : '14.9 million'}
+              {summary.data ? num(summary.data.total_searches) : '14.1 million'}
             </strong>{' '}
             searches whose scope included Santa Clara Police Department's Flock
             Safety cameras. This site publishes that audit log, and the city's
-            purchase records for the system, as they were released.
+            purchase records for the system, with exact duplicate rows removed
+            and nothing else changed.
           </p>
         </div>
 
@@ -94,7 +95,9 @@ export function Home() {
               <StatTile
                 label="Search events"
                 value={compact(s.total_searches)}
-                note={`${num(s.total_searches)} rows as released`}
+                note={`${num(s.total_searches)} distinct rows${
+                  s.released_rows ? ` of ${num(s.released_rows)} released` : ''
+                }`}
               />
               <StatTile
                 label="Agencies that searched"
@@ -155,16 +158,20 @@ export function Home() {
               <strong>Provenance.</strong> Released by the Santa Clara Police
               Department on {longDate('2026-08-05')} in response to California
               Public Records Act request 26-235. Figures here are computed
-              directly from the released files. No rows were removed, corrected or
-              deduplicated.
+              directly from the released files. Exact duplicate rows are
+              removed; nothing else was added, removed or corrected.
             </div>
             {summary.data ? (
               <dl className="dl">
                 <dt>Duplicates</dt>
                 <dd>
-                  {num(summary.data.duplicate_rows)} exact-duplicate rows (
-                  {pct(summary.data.duplicate_rows, summary.data.total_searches)}),
-                  concentrated in 2022
+                  {num(summary.data.duplicate_rows)} byte-identical rows
+                  removed
+                  {summary.data.released_rows
+                    ? ` (${pct(summary.data.duplicate_rows, summary.data.released_rows)} of ${num(summary.data.released_rows)} released)`
+                    : ''}
+                  , from two logging faults: August 2022 to January 2023, and
+                  February 2025
                 </dd>
                 <dt>Networks</dt>
                 <dd>
@@ -305,7 +312,7 @@ export function Home() {
                   </>
                 }
                 table={<HeatmapTable grid={h.grid} />}
-                footnote={`Busiest single cell: ${DAY_NAMES[peak.d]} at ${hourLabel(peak.h)} Pacific, ${num(peak.v)} events. Across the whole log ${DAY_NAMES[topDay]} is the busiest weekday and ${hourLabel(topHour)} the busiest hour. Activity concentrates in the working week and daylight hours. The single busiest date in the log is ${longDate('2025-02-12')}, with 75,885 events, roughly three times a normal day and elevated across many agencies at once. Switch to the table view for every value.`}
+                footnote={`Busiest single cell: ${DAY_NAMES[peak.d]} at ${hourLabel(peak.h)} Pacific, ${num(peak.v)} events. Across the whole log ${DAY_NAMES[topDay]} is the busiest weekday and ${hourLabel(topHour)} the busiest hour. Activity concentrates in the working week and daylight hours. The single busiest date in the log is ${longDate('2025-07-30')}, with 25,972 events, about 1.6 times the median 2025 day. Switch to the table view for every value.`}
               >
                 <Heatmap grid={h.grid} tz={h.tz} />
               </ChartFrame>
@@ -325,7 +332,7 @@ export function Home() {
           </div>
           <div className="pill-links">
             <Link className="btn" to="/explorer">
-              Query the 14.9 million events
+              Query the 14.1 million events
             </Link>
             <Link className="btn btn--ghost" to="/spending">
               See what the city paid

@@ -37,7 +37,7 @@ const ROW_COLUMNS =
   'org, search_time, search_type, networks_searched, timeframe_start, timeframe_end';
 
 const INTRO =
-  'The full audit log of 14.9 million search events is published as 17 Parquet files, ' +
+  'The full audit log of 14.1 million distinct search events is published as 17 Parquet files, ' +
   'one per quarter. Your browser runs the query itself and downloads only the byte ranges ' +
   'it needs, so nothing you enter here is uploaded anywhere. The first query takes a few ' +
   'seconds while the query engine starts up.';

@@ -6,7 +6,10 @@ export interface OrgCount {
 }
 
 export interface Summary {
+  /** Distinct rows published, after exact duplicates are collapsed. */
   total_searches: number;
+  /** Rows in the release before deduplication. */
+  released_rows: number;
   distinct_orgs: number;
   first_search: string;
   last_search: string;

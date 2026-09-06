@@ -78,7 +78,14 @@ export function About() {
               <dt>Released</dt>
               <dd>{longDate('2026-08-05')}</dd>
               <dt>Audit rows</dt>
-              <dd>{summary.data ? num(summary.data.total_searches) : '14,895,298'}</dd>
+              <dd>
+                {summary.data ? num(summary.data.total_searches) : '14,082,090'}{' '}
+                published, from{' '}
+                {summary.data && summary.data.released_rows
+                  ? num(summary.data.released_rows)
+                  : '14,895,298'}{' '}
+                as released
+              </dd>
               <dt>Documents</dt>
               <dd>
                 7 PDFs, published at <Link to="/documents">Documents</Link>
@@ -129,9 +136,15 @@ export function About() {
             integer, and the three timestamps as naive datetimes.
           </p>
           <p>
-            <strong>No rows were added, removed, corrected or deduplicated.</strong>{' '}
-            Values that look wrong in the source still look wrong here, and the
-            caveats below describe the ones worth knowing about.
+            <strong>
+              Exact duplicates are the only rows removed. Nothing was added or
+              corrected.
+            </strong>{' '}
+            Rows that were byte identical across all six columns have been
+            collapsed to one, for the reasons set out in the caveat below; the
+            as-released count is published alongside every total. Values that
+            look wrong in the source still look wrong here, and the caveats
+            below describe the ones worth knowing about.
           </p>
           <p>
             All timestamps in the release are UTC and are stored and displayed as
@@ -171,28 +184,38 @@ export function About() {
               searching per day fell from 609 to 183 and never recovered. 3,347
               organizations appear in the log before 2024; only 375 appear after.
               Large out-of-state searchers stop on 4 December 2023, including
-              Houston police (506,000 searches), Fort Worth, Dallas and the
+              Houston police (445,066 searches), Fort Worth, Dallas and the
               Illinois State Police. The timing matches guidance issued by the
               California Attorney General in October 2023 stating that SB 34 bars
               sharing ALPR data with out-of-state agencies. The change was not
-              total: Las Vegas Metro (91,691 searches), MOCIC (10,360), Monroe
-              Georgia police (1,325) and Hamilton County Ohio (493), among others,
+              total: Las Vegas Metro (90,961 searches after 2024), MOCIC
+              (10,296), Monroe Georgia police (1,322) and Hamilton County Ohio
+              (493), among others,
               continue to appear after 2024. This site describes the pattern in the
               data and does not assert a cause.
             </Caveat>
 
-            <Caveat title="2022 totals are inflated by duplicate rows">
+            <Caveat title="Duplicate rows were removed, and where they came from">
               The release contains{' '}
               {summary.data ? num(summary.data.duplicate_rows) : '813,208'}{' '}
-              exact-duplicate rows,{' '}
-              {summary.data
-                ? pct(summary.data.duplicate_rows, summary.data.total_searches, 2)
+              rows that are byte identical to another row across all six columns,{' '}
+              {summary.data && summary.data.released_rows
+                ? pct(summary.data.duplicate_rows, summary.data.released_rows, 2)
                 : '5.46%'}{' '}
-              of the total. 652,285 of them fall in 2022, roughly 45 percent of
-              that year's rows, including 240 byte-identical rows stamped to the
-              same second for one agency. This looks like duplication in the export
-              rather than real repeated searching. The data is published as
-              released, so 2022 counts overstate the number of distinct searches.
+              of the {summary.data && summary.data.released_rows
+                ? num(summary.data.released_rows)
+                : '14,895,298'}{' '}
+              released. They are not spread evenly, and they are not an artifact
+              of the 50 monthly exports overlapping: no row appears in more than
+              one export file. They fall in two windows. From August 2022 to
+              January 2023 the log runs at almost exactly twice its real volume,
+              at a uniform rate across unrelated agencies, peaking at 2.20x in
+              December 2022. In February 2025 every duplicate group is exactly
+              five rows. Both look like logging faults rather than repeated
+              searching, and removing them turns a series with an artificial hump
+              into a continuous one. Each identical group is collapsed to a single
+              row, so every total on this site is a count of distinct logged
+              events. The as-released figure is published alongside it.
             </Caveat>
 
             <Caveat title="Networks searched is zero for all of 2022">
@@ -227,7 +250,7 @@ export function About() {
             <Caveat title="Some organization names are placeholders">
               Names are reproduced exactly as Flock recorded them. That includes
               entries such as "do not use" and "DO NOT USE", "Decommissioned Org"
-              (1,212 searches), "[Federal] FBI [Inactive]" (21,023 searches, ending
+              (3,998 searches), "[Federal] FBI [Inactive]" (18,650 searches, ending
               14 July 2023) and "Flock RTCC". They were not filtered out, because
               removing rows would misstate the totals. Treat the distinct agency
               count as a count of names in the log, not of real, currently active
@@ -235,7 +258,7 @@ export function About() {
             </Caveat>
 
             <Caveat title="Some searched time windows are malformed">
-              995 rows have a time-frame end earlier than their start, 40 have a
+              875 rows have a time-frame end earlier than their start, 11 have a
               start at the Unix epoch (1 January 1970) and 3 have an end past 2030.
               The median searched window is 2 days. These rows are left as
               released.
@@ -488,9 +511,9 @@ export function About() {
           </p>
           <p>
             Counts on this site may differ slightly from figures published
-            elsewhere, because duplicates are retained and because different
-            reports may set month boundaries in different time zones. Where a
-            number matters, download the Parquet files and check it.
+            elsewhere, because exact duplicates are removed here and because
+            different reports may set month boundaries in different time zones.
+            Where a number matters, download the Parquet files and check it.
           </p>
         </div>
       </Section>

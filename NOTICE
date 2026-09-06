@@ -7,8 +7,9 @@ public/docs/, public/data/parquet/, public/data/aggregates/,
 public/data/invoices.json, public/data/documents.json
     Records released by the Santa Clara (CA) Police Department and the City of
     Santa Clara in response to California Public Records Act request #26-235
-    (released 2026-08-05). Public records, republished as released. No
-    copyright is claimed over them.
+    (released 2026-08-05). Public records, republished with exact-duplicate
+    rows removed from the audit log and no other transformation. No copyright
+    is claimed over them.
 
 public/data/access.json
     Parsed from Flock Safety's public transparency portal for Santa Clara PD.

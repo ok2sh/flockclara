@@ -1,5 +1,5 @@
 {
- "total_rows": 14895298,
+ "total_rows": 14082090,
  "columns": [
   "org",
   "networks_searched",
@@ -11,122 +11,122 @@
  "files": [
   {
    "name": "searches_2022q1.parquet",
-   "rows": 34908,
+   "rows": 34722,
    "min": "2022-01-31T20:51:54",
    "max": "2022-03-31T23:59:50",
-   "bytes": 521723
+   "bytes": 521489
   },
   {
    "name": "searches_2022q2.parquet",
-   "rows": 97832,
+   "rows": 95422,
    "min": "2022-04-01T00:06:10",
    "max": "2022-06-30T23:55:10",
-   "bytes": 1348851
+   "bytes": 1345874
   },
   {
    "name": "searches_2022q3.parquet",
-   "rows": 347407,
+   "rows": 206971,
    "min": "2022-07-01T00:07:00",
    "max": "2022-09-30T23:59:50",
-   "bytes": 2447566
+   "bytes": 2458265
   },
   {
    "name": "searches_2022q4.parquet",
-   "rows": 980448,
+   "rows": 471195,
    "min": "2022-10-01T00:01:06",
    "max": "2022-12-31T23:59:47",
-   "bytes": 3926451
+   "bytes": 4170847
   },
   {
    "name": "searches_2023q1.parquet",
-   "rows": 627098,
+   "rows": 555212,
    "min": "2023-01-01T00:00:24",
    "max": "2023-03-31T23:59:52",
-   "bytes": 6100212
+   "bytes": 6059625
   },
   {
    "name": "searches_2023q2.parquet",
-   "rows": 711911,
+   "rows": 710235,
    "min": "2023-04-01T00:01:00",
    "max": "2023-06-30T23:59:55",
-   "bytes": 9399912
+   "bytes": 9398323
   },
   {
    "name": "searches_2023q3.parquet",
-   "rows": 927114,
+   "rows": 926845,
    "min": "2023-07-01T00:00:10",
    "max": "2023-09-30T23:59:53",
-   "bytes": 11914068
+   "bytes": 11913037
   },
   {
    "name": "searches_2023q4.parquet",
-   "rows": 910274,
+   "rows": 906864,
    "min": "2023-10-01T00:00:02",
    "max": "2023-12-31T23:59:58",
-   "bytes": 11564094
+   "bytes": 11558637
   },
   {
    "name": "searches_2024q1.parquet",
-   "rows": 763369,
+   "rows": 760127,
    "min": "2024-01-01T00:00:04",
    "max": "2024-03-31T23:59:45",
-   "bytes": 9419406
+   "bytes": 9413500
   },
   {
    "name": "searches_2024q2.parquet",
-   "rows": 890326,
+   "rows": 887269,
    "min": "2024-04-01T00:00:42",
    "max": "2024-06-30T23:59:28",
-   "bytes": 11068143
+   "bytes": 11064651
   },
   {
    "name": "searches_2024q3.parquet",
-   "rows": 909754,
+   "rows": 906681,
    "min": "2024-07-01T00:00:12",
    "max": "2024-09-30T23:59:44",
-   "bytes": 11279654
+   "bytes": 11276157
   },
   {
    "name": "searches_2024q4.parquet",
-   "rows": 1074280,
+   "rows": 1072882,
    "min": "2024-10-01T00:00:17",
    "max": "2024-12-31T23:59:56",
-   "bytes": 13268373
+   "bytes": 13265845
   },
   {
    "name": "searches_2025q1.parquet",
-   "rows": 1386415,
+   "rows": 1325856,
    "min": "2025-01-01T00:00:00",
    "max": "2025-03-31T23:59:59",
-   "bytes": 16525862
+   "bytes": 16476716
   },
   {
    "name": "searches_2025q2.parquet",
-   "rows": 1428132,
+   "rows": 1424834,
    "min": "2025-04-01T00:00:01",
    "max": "2025-06-30T23:59:32",
-   "bytes": 17409225
+   "bytes": 17404082
   },
   {
    "name": "searches_2025q3.parquet",
-   "rows": 1519595,
+   "rows": 1516548,
    "min": "2025-07-01T00:00:13",
    "max": "2025-09-30T23:59:57",
-   "bytes": 18248063
+   "bytes": 18244218
   },
   {
    "name": "searches_2025q4.parquet",
-   "rows": 1380587,
+   "rows": 1378516,
    "min": "2025-10-01T00:00:01",
    "max": "2025-12-31T23:59:59",
-   "bytes": 16317837
+   "bytes": 16312574
   },
   {
    "name": "searches_2026q1.parquet",
-   "rows": 905848,
+   "rows": 901911,
    "min": "2026-01-01T00:00:00",
    "max": "2026-02-23T22:11:12",
-   "bytes": 10443560
+   "bytes": 10440046
   }
  ]
 }
